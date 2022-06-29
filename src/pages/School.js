@@ -2,6 +2,8 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import { DataGrid } from '@mui/x-data-grid';
 import ModalButton from '../components/ModalButton';
+import { Box,Grid } from '@mui/material';
+import '../App.css'
 
 function getFullName(params) {
     return `${params.row.firstName || ''} ${params.row.lastName || ''}`;
@@ -59,7 +61,7 @@ const columns = [
         renderCell: () => (
             <>
                <ModalButton
-                header="Danışman Onayı"
+                header="Yüksek Okul Onayı"
                />
             </>
         )
@@ -71,11 +73,11 @@ const rows = [
     { id: 3, firstName: 'Gürbüz Melih', lastName: 'Kocaman', no: 205035024, class: 'Bilgisayar Programcılığı', staj: 'Staj 1' },
     { id: 4, firstName: 'Enver', lastName: 'Uludoğan', no: 205035024, class: 'Bilgisayar Programcılığı', staj: 'Staj 1' },
     { id: 5, firstName: 'Ekrem', lastName: 'Kesik', no: 205035024, class: 'Bilgisayar Programcılığı', staj: 'Staj 1' },
-    { id: 6, firstName: 'Buğra', lastName: 'Yeşilyurt', no: 205035024, class: 'Bilgisayar Programcılığı', staj: 'Staj 1' },
+    { id: 6, firstName: 'Buğra', lastName: 'Arı', no: 205035024, class: 'Bilgisayar Programcılığı', staj: 'Staj 1' },
     { id: 7, firstName: 'Mustafa Berkay', lastName: 'Ertan', no: 205035024, class: 'Bilgisayar Programcılığı', staj: 'Staj 1' },
 ];
 
-const Teacher = () => {
+const School = () => {
 
     return (
         <>
@@ -92,4 +94,4 @@ const Teacher = () => {
     )
 }
 
-export default Teacher
+export default School

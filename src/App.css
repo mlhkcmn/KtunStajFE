@@ -170,3 +170,72 @@ body {
     text-decoration: none !important;
     
 }
+
+.inputText {
+    width: 98% !important;
+    height: 40px !important;
+    margin: 10px 0 10px 0;
+}
+
+.infoBox {
+    padding: 8px !important;
+    border: 1px #555 dashed;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.approvButton {
+    width: 100px;
+    padding: 0 0 10px 20px;
+    background-color: #282d57;
+    color: #FEFCFD;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: width .4s;
+    border-radius: .5s ;
+}
+
+.approvButtonCancel {
+    width: 100px;
+    padding: 0 0 10px 20px;
+    background-color: #282d57;
+    color: #FEFCFD;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: width .4s;
+    border-radius: .5s ;
+}
+
+.approvButtonCancel:focus {
+    background-color: #db0505;
+    padding: 8px 25px 5px 0;
+}
+
+.approvIcon {
+    opacity: 0;
+}
+
+.approvButton:focus {
+    background-color: #44c08a;
+    padding: 5px 33px 5px 0;
+}
+
+.approvButton:focus .approvText{
+    opacity: 0;
+}
+
+.approvButtonCancel:focus .approvText{
+    opacity: 0;
+}
+
+.approvButton:focus .approvIcon {
+    opacity: 1;
+    transition-delay: .3s;
+}
+
+.approvButtonCancel:focus .approvIcon {
+    opacity: 1;
+    transition-delay: .3s;
+}

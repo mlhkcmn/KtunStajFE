@@ -170,3 +170,49 @@ body {
     text-decoration: none !important;
     
 }
+
+.loginContainer {
+    max-width: none !important;
+    height: 100vh;
+    background: rgb(177, 73, 73);
+}
+
+.loginButton {
+    background-color: rgb(177, 73, 73) !important;
+}
+
+.loginButtonTitle {
+    text-transform: capitalize;
+    color: white !important;
+}
+
+.loginHeader {
+    font-weight: 400 !important;
+    font-size: 30px !important;
+    color: rgb(177, 73, 73) !important;
+    letter-spacing: .3rem !important;
+    text-align: center;
+}
+
+.registerHeader {
+    font-weight: 400 !important;
+    font-size: 30px !important;
+    color: rgb(177, 73, 73) !important;
+    letter-spacing: .3rem !important;
+    text-align: center;
+}
+
+.registerButtonTitle {
+    text-transform: capitalize;
+    color: white !important;
+}
+
+.registerButton {
+    background-color: rgb(177, 73, 73) !important;
+}
+
+.registerSection {
+    max-width: none !important;
+    height: 100vh;
+    background: rgb(177, 73, 73);
+}

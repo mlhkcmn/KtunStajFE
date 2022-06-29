@@ -11,7 +11,6 @@ const style = {
     minHeight: '583px',
     bgcolor: 'background.paper',
     borderRadius: '20px',
-    border: '2px solid #000',
     boxShadow: 24,
     p: 2,
 };

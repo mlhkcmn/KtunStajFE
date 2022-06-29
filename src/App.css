@@ -239,6 +239,7 @@ body {
 .approvButtonCancel:focus .approvIcon {
     opacity: 1;
     transition-delay: .3s;
+}
 
 .loginContainer {
     max-width: none !important;

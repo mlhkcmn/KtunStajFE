@@ -2,6 +2,9 @@ import React from 'react'
 import { Button, Typography, Modal, Box, IconButton, Grid } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import FileUpload from './common/FileUpload';
+import Info from './common/Information';
+import HowToRegOutlinedIcon from '@mui/icons-material/HowToRegOutlined';
+import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 
 const style = {
     maxWidth: '660px',
@@ -18,7 +21,7 @@ const styles = {
     paddingBottom: '8%'
 };
 
-const ModalButton = () => {
+const ModalButton = (props) => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -35,13 +38,26 @@ const ModalButton = () => {
                         <IconButton onClick={() => handleClose()} sx={{ float: 'right' }}>
                             <CloseIcon sx={{ color: '#FFD358' }} fontSize="medium" />
                         </IconButton>
-                        <Grid container paddingTop={4}>
+                        <Grid container paddingTop={4} justifyContent='center' alignItems={'center'}>
                             <Grid item xs={2}/>
-                            <Grid item xs={8} sx={{ textAlign: 'center' }}>
+                            <Info />
+                            <Grid item xs={8} sx={{ textAlign: 'center'}}>
                                 <FileUpload
-                                    header="Danışman Onayı"
+                                    header={props.header}
                                     text="Belgede ki bilgilerin doğru olduğunu bildiririm."
                                 />
+                            </Grid>
+                            <Grid xs="6" lg="6" paddingTop={'18px'} justifyContent="center" alignItems={'center'} textAlign="center">
+                            <button className='approvButtonCancel'>
+                                <span className='approvText'>İptal</span>
+                                <CancelOutlinedIcon className='approvIcon' />
+                            </button>
+                            </Grid>
+                            <Grid xs="6" lg="6" paddingTop={'18px'} justifyContent="center" alignItems={'center'} textAlign="center">
+                            <button className='approvButton'>
+                                <span className='approvText'>Onayla</span>
+                                <HowToRegOutlinedIcon className='approvIcon' />
+                            </button>
                             </Grid>
                         </Grid>
                     </Box>

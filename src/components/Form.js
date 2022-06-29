@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Grid, Link, Typography } from '@mui/material'
+import { Box, Grid, Typography } from '@mui/material'
 import StudentInfo from "./StudentInfo";
 import StajKurumu from "./StajKurumu";
 import Signature from "./Signature";

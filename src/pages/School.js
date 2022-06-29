@@ -1,8 +1,8 @@
-import React from 'react'
+import { useState } from 'react'
+import axios from 'axios';
 import Navbar from '../components/Navbar'
 import { DataGrid } from '@mui/x-data-grid';
 import ModalButton from '../components/ModalButton';
-import { Box,Grid } from '@mui/material';
 import '../App.css'
 
 function getFullName(params) {
@@ -78,6 +78,12 @@ const rows = [
 ];
 
 const School = () => {
+    // const [posts, setPosts] = useState();
+
+    // axios.get('https://localhost:7050/api/posts').then(res => {
+    //     setPosts(res.data);
+    // });
+
 
     return (
         <>

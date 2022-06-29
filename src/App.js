@@ -1,12 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from 'react'
+import { BrowserRouter as HashRouter, Route, Routes } from 'react-router-dom'
+import './App.css'
 
-function App() {
+const Home = React.lazy(() => import('./components/Form'))
+const Teacher = React.lazy(() => import('./pages/Teacher'))
+const Deneme = React.lazy(() => import('./pages/Deneme'))
+
+const App = () => {
   return (
-    <div className="App">
-      <p>TESafjansfjaasdsdasT</p>
-    </div>
-  );
+    <HashRouter>
+      <Suspense>
+        <Routes>
+          <Route exact path="*" name="Home Page" element={<Home />} />
+          <Route exact path="/teacher" name="Teacher Page" element={<Teacher />} />
+          <Route exact path="/deneme" name="Deneme Page" element={<Deneme />} />
+        </Routes>
+      </Suspense>
+    </HashRouter>
+  )
 }
 
-export default App;
+export default App

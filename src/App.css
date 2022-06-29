@@ -1,38 +1,172 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
 .App {
-  text-align: center;
+    background: rgb(177, 73, 73);
+    width: 100%;
+    min-height: 100vh;
+    place-items: center;
+    display: grid;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    margin: 0%;
+    padding: 0%;
+    font-family: montserrat, arial, verdana;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.FormCard {
+    margin-bottom: 40px;
+    border-radius: 20px !important;
+    padding: 7px;
+    place-items: center;
+    text-align: center;
+    background-color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.FormHeader {
+    font-size: 30px !important;
+    font-family: montserrat, arial, verdana !important;
 }
 
-.App-link {
-  color: #61dafb;
+.FormInput {
+    width: 98.3%;
+    height: 36px;
+    background: #FEFCFD;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-size: 14px !important;
+    font-family: montserrat, arial, verdana !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.MultilineInput {
+    width: 100%;
+    height: 83px;
+    box-sizing: border-box;
+    border: 2px solid !important;
+    background: #FEFCFD;
+    border-radius: 10px !important;
+    padding-left: 10px !important;
+    font-size: 14px !important;
+    font-family: montserrat, arial, verdana !important;
+}
+
+.MultilineInput1 {
+    width: 100%;
+    height: 103px;
+    box-sizing: border-box;
+    border: 2px solid !important;
+    background: #FEFCFD;
+    border-radius: 10px !important;
+    padding-left: 10px !important;
+    font-size: 14px !important;
+    font-family: montserrat, arial, verdana !important;
+}
+
+.FormButton {
+    width: 40%;
+    height: 55px;
+    background: #FEFCFD;
+    border-radius: 10px;
+    font-size: 20px !important;
+    font-family: montserrat, arial, verdana !important;
+}
+
+.signupModalRadio {
+    font-size: 13px !important;
+    line-height: 19px !important;
+    color: #000 !important;
+    border-radius: 10px;
+    width: 30%;
+}
+
+.progressbar {
+    width: 100%;
+    height: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.progressbar div {
+    width: 33.3%;
+    height: 100%;
+    background-color: rgb(98, 0, 255);
+    border-radius: 5px;
+}
+
+.FileUploadButton {
+    height: 45px;
+    border-radius: 5px;
+}
+
+.FileUploadHeader {
+    font-size: 22px !important;
+    font-family: montserrat, arial, verdana !important;
+    font-weight: 700 !important;
+}
+
+.FileUploadText {
+    padding-left: 6px;
+    font-size: 16px !important;
+    font-family: montserrat, arial, verdana !important;
+    font-weight: 700 !important;
+    text-align: center;
+}
+
+.file-upload-drag-drop {
+    background: #fbfcff;
+    border: 1px dashed #979797;
+    box-sizing: border-box;
+    border-radius: 25px;
+    padding: 65px 30px 20px 30px;
+    text-align: center;
+    min-height: 250px;
+    cursor: pointer;
+    max-width: 250px;
+}
+
+.NavbarContainer {
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 25%, rgba(4, 4, 134, 1) 77%, rgb(3, 9, 172) 100%);
+}
+
+.NavbarLogo {
+    width: 180px;
+}
+
+.navbarButton {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    font-family: Mulish !important;
+    color: white;
+    text-decoration: none;
+}
+
+.menuItemText {
+    font-family: Mulish !important;
+    text-transform: uppercase;
+    font-size: 18px !important;
+}
+
+.menuItemLink {
+    text-decoration: none !important;
+    color: #67696f !important;
+}
+
+.NavbarDivider {
+    width: 70%;
+}
+
+.submissionTableViewButtonText {
+    font-family: Mulish !important;
+    font-size: 16px;
+    font-weight: 600!important;
+    line-height: 20px;
+    text-align: center;
+    color: rgb(0, 81, 255);
+    text-transform: capitalize;
+    text-decoration: none !important;
+}
+
+.submissionTableViewButton {
+    text-decoration: none !important;
+    
 }

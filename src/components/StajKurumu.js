@@ -3,16 +3,16 @@ import { Grid } from '@mui/material'
 import { FormInput, MultilineInput, MultilineInput1} from './common/Input'
 import FileUpload from './common/FileUpload'
 
-const StajKurumu = ({ formData, setFormData }) => {
+const StajKurumu = ({ post, setPost }) => {
     return (
         <>
             <Grid item xs={12}>
                 <FormInput
                     type='text'
                     placeholder='Staj Yerinin Adı'
-                    value={formData.corporationname}
+                    value={post.corporationname}
                     onChange={(e) => {
-                        setFormData({ ...formData, corporationname: e.target.value });
+                        setPost({ ...post, corporationName: e.target.value });
                     }}
                 />
             </Grid>
@@ -21,9 +21,9 @@ const StajKurumu = ({ formData, setFormData }) => {
                     rows='3'
                     type='text'
                     placeholder='Açık Adresi'
-                    value={formData.corporationaddress}
+                    value={post.corporationAddress}
                     onChange={(e) => {
-                        setFormData({ ...formData, corporationaddress: e.target.value });
+                        setPost({ ...post, corporationAddress: e.target.value });
                     }}
                 />
             </Grid>
@@ -31,9 +31,9 @@ const StajKurumu = ({ formData, setFormData }) => {
                 <FormInput
                     type='text'
                     placeholder='Üretim/Hizmet Alanı'
-                    value={formData.corporationproduction}
+                    value={post.corporationProduction}
                     onChange={(e) => {
-                        setFormData({ ...formData, corporationproduction: e.target.value });
+                        setPost({ ...post, corporationProduction: e.target.value });
                     }}
                 />
             </Grid>
@@ -41,9 +41,9 @@ const StajKurumu = ({ formData, setFormData }) => {
                 <FormInput
                     type='number'
                     placeholder='Kurumda/İşletmede çalışan toplam personel sayısı'
-                    value={formData.corporationworkercount}
+                    value={post.corporationWorkerCount}
                     onChange={(e) => {
-                        setFormData({ ...formData, corporationworkercount: e.target.value });
+                        setPost({ ...post, corporationWorkerCount: e.target.value });
                     }}
                 />
             </Grid>
@@ -51,9 +51,9 @@ const StajKurumu = ({ formData, setFormData }) => {
                 <FormInput
                     type='number'
                     placeholder='(Gerçek kişilik ise) TC no'
-                    value={formData.corporationpersonalitytcno}
+                    value={post.corporationPersonalityTcNo}
                     onChange={(e) => {
-                        setFormData({ ...formData, corporationpersonalitytcno: e.target.value });
+                        setPost({ ...post, corporationPersonalityTcNo: e.target.value });
                     }}
                 />
             </Grid>
@@ -61,9 +61,9 @@ const StajKurumu = ({ formData, setFormData }) => {
                 <FormInput
                     type='email'
                     placeholder='Telefon numarası'
-                    value={formData.corporationgsmno}
+                    value={post.corporationGsmNo}
                     onChange={(e) => {
-                        setFormData({ ...formData, corporationgsmno: e.target.value });
+                        setPost({ ...post, corporationGsmNo: e.target.value });
                     }}
                 />
             </Grid>
@@ -71,9 +71,9 @@ const StajKurumu = ({ formData, setFormData }) => {
                 <FormInput
                     type='number'
                     placeholder='Faks numarası'
-                    value={formData.corporationfax}
+                    value={post.corporationFax}
                     onChange={(e) => {
-                        setFormData({ ...formData, corporationfax: e.target.value });
+                        setPost({ ...post, corporationFax: e.target.value });
                     }}
                 />
             </Grid>
@@ -81,9 +81,9 @@ const StajKurumu = ({ formData, setFormData }) => {
                 <FormInput
                     type='number'
                     placeholder='(Tüzel kişilik ise) Kurum/İşletme vergi numarası'
-                    value={formData.corporationtaxno}
+                    value={post.corporationTaxNo}
                     onChange={(e) => {
-                        setFormData({ ...formData, corporationtaxno: e.target.value });
+                        setPost({ ...post, corporationTaxNo: e.target.value });
                     }}
                 />
             </Grid>
@@ -91,9 +91,9 @@ const StajKurumu = ({ formData, setFormData }) => {
                 <FormInput
                     type='number'
                     placeholder='Vergi dairesi'
-                    value={formData.corporationtaxdepartment}
+                    value={post.corporationDepartment}
                     onChange={(e) => {
-                        setFormData({ ...formData, corporationtaxdepartment: e.target.value });
+                        setPost({ ...post, corporationDepartment: e.target.value });
                     }}
                 />
             </Grid>
@@ -102,9 +102,9 @@ const StajKurumu = ({ formData, setFormData }) => {
                     rows='4'
                     type='number'
                     placeholder='Yetkilinin adı soyadı, görev ve unvanı'
-                    value={formData.corporationauthorizedperson}
+                    value={post.corporationauthorizedperson}
                     onChange={(e) => {
-                        setFormData({ ...formData, corporationauthorizedperson: e.target.value });
+                        setPost({ ...post, corporationAuthorizedPerson: e.target.value });
                     }}
                 />
             </Grid>
@@ -112,9 +112,9 @@ const StajKurumu = ({ formData, setFormData }) => {
                 <FormInput
                     type='text'
                     placeholder='Web Adresi'
-                    value={formData.corporationwebaddress}
+                    value={post.corporationWebAddress}
                     onChange={(e) => {
-                        setFormData({ ...formData, corporationwebaddress: e.target.value });
+                        setPost({ ...post, corporationWebAddress: e.target.value });
                     }}
                 />
                 <br/>
@@ -122,9 +122,9 @@ const StajKurumu = ({ formData, setFormData }) => {
                 <FormInput
                     type='email'
                     placeholder='E-posta'
-                    value={formData.corporationmail}
+                    value={post.corporationMail}
                     onChange={(e) => {
-                        setFormData({ ...formData, corporationmail: e.target.value });
+                        setPost({ ...post, corporationMail: e.target.value });
                     }}
                 />
             </Grid>

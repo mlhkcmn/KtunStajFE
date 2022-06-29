@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import axios from 'axios';
 import {
     Card,
     CardContent,
@@ -9,22 +11,21 @@ import {
 } from '@mui/material'
 
 const Register = () => {
-    // const [name, setName] = useState<String>();
-    // const [email, setEmail] = useState<String>();
-    // const [password, setPassword] = useState<String>();
+    const [name, setName] = useState();
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
 
-    // const registerSubmit = async (e: { preventDefault: () => void }) => {
-    //     e.preventDefault()
-    //     try {
-    //         await axios.post('https://localhost:7050/api/Users', {name: name , email: email , password: password})
+    const registerSubmit = async (e) => {
+        try {
+            await axios.post('https://localhost:7050/api/Users', {name: name , email: email , password: password})
 
-    //         localStorage.setItem('firstLogin', "true")
+            localStorage.setItem('firstLogin', "true")
 
-    //         window.location.href = "/";
-    //     } catch (err: any) {
-    //         console.log(err);
-    //     }
-    // }
+            window.location.href = "/";
+        } catch (err) {
+            console.log(err);
+        }
+    }
 
     return (
         <Container className='registerSection'>
@@ -36,7 +37,7 @@ const Register = () => {
                         </center>
                     </Grid>
                     <Grid item xs={10}>
-                        <Card>
+                        <Card onSubmit={registerSubmit}>
                             <CardContent>
                                 <Grid container spacing={1} justifyContent="center" alignItems="center">
                                     <Grid item xs={12}>
@@ -45,19 +46,19 @@ const Register = () => {
                                         </Typography>
                                     </Grid>
                                     <Grid item xs={12}>
-                                        <TextField size="medium" fullWidth name='name' label="İsim-Soyisim" type="text" sx={{ marginTop: '20px' }} />
+                                        <TextField size="medium" fullWidth name='name' label="İsim-Soyisim" value={name} type="name" onChange={(e) => setName(e.target.value)} sx={{ marginTop: '20px' }} />
                                     </Grid>
                                     <Grid item xs={12}>
-                                        <TextField size="medium" fullWidth name='name' label="Okul Numarası" type="text" />
+                                        {/* <TextField size="medium" fullWidth name='name' label="Okul Numarası" type="text" /> */}
                                     </Grid>
                                     <Grid item xs={12}>
-                                        <TextField size="medium" fullWidth name='email' label="Email" type="email" />
+                                        <TextField size="medium" fullWidth name='email' label="Email" value={email} type="email" onChange={(e) => setEmail(e.target.value)} />
                                     </Grid>
                                     <Grid item xs={12}>
-                                        <TextField size="medium" fullWidth name='password' label="Şifre" type="password" />
+                                        <TextField size="medium" fullWidth name='password' label="Şifre" value={password} type="password" onChange={(e) => setPassword(e.target.value)} />
                                     </Grid>
                                     <Grid item xs={12}>
-                                        <Button className='registerButton' type="submit" size='large' fullWidth>
+                                        <Button className='registerButton' onClick={(e) => registerSubmit(e)} type="submit" size='large' fullWidth>
                                             <Typography className='registerButtonTitle'>
                                                 Kayıt Ol
                                             </Typography>

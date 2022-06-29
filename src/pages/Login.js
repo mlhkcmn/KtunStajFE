@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import axios from 'axios';
 import {
     Card,
     CardContent,
@@ -11,23 +13,22 @@ import {
 } from '@mui/material'
 
 const Login = () => {
-    // const [name] = useState<String>();
-    // const [email, setEmail] = useState<String>();
-    // const [password, setPassword] = useState<String>();
+    const [name] = useState();
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
 
-    // const loginSubmit = async (e: { preventDefault: () => void }) => {
-    //     e.preventDefault()
-    //     try {
-    //         const userData = await axios.post('https://localhost:7050/api/Users/api/Users/login', { name: name, email: email, password: password })
+    const loginSubmit = async (e) => {
+        try {
+            const userData = await axios.post('https://localhost:7050/api/Users/api/Users/login', { name: name, email: email, password: password })
 
-    //         localStorage.setItem('userName', userData.data.name)
-    //         localStorage.setItem('userId', userData.data.id)
+            localStorage.setItem('userName', userData.data.name)
+            localStorage.setItem('userId', userData.data.id)
 
-    //         window.location.href = "/";
-    //     } catch (err: any) {
-    //         console.log(err);
-    //     }
-    // }
+            window.location.href = "/";
+        } catch (err) {
+            console.log(err);
+        }
+    }
 
     return (
         <Container className='loginContainer'>
@@ -48,13 +49,13 @@ const Login = () => {
                                         </Typography>
                                     </Grid>
                                     <Grid item xs={12}>
-                                        <TextField size="medium" fullWidth type="email" name="email" required placeholder="Email" sx={{ marginTop: '20px' }} />
+                                        <TextField size="medium" fullWidth type="email" name="email" onChange={(e) => setEmail(e.target.value)} required placeholder="Email" sx={{ marginTop: '20px' }} />
                                     </Grid>
                                     <Grid item xs={12}>
-                                        <TextField size="medium" fullWidth type="password" name="password" required placeholder="Parola" sx={{ marginBottom: '20px', }} />
+                                        <TextField size="medium" fullWidth type="password" name="password" onChange={(e) => setPassword(e.target.value)} required placeholder="Parola" sx={{ marginBottom: '20px', }} />
                                     </Grid>
                                     <Grid item xs={12}>
-                                        <Button className='loginButton' type="submit" size='large' fullWidth>
+                                        <Button className='loginButton' type="submit" onClick={(e) => loginSubmit(e)} size='large' fullWidth>
                                             <Typography className='loginButtonTitle'>
                                                 Giriş Yap
                                             </Typography>

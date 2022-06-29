@@ -3,50 +3,60 @@ import { Box, Grid, Link, Typography } from '@mui/material'
 import StudentInfo from "./StudentInfo";
 import StajKurumu from "./StajKurumu";
 import Signature from "./Signature";
+import axios from "axios";
 
 const Form = () => {
     const [page, setPage] = useState(0);
-    const [formData, setFormData] = useState({
-        studentname: "",
-        studentsurname: "",
-        studentno: "",
-        studentdepartment: "",
-        studentclass: "",
-        studenttcno: "",
-        studentmail: "",
-        studentgsmno: "",
-        staj: "",
-        corporationname: "",
-        corporationaddress: "",
-        corporationproduction: "",
-        corporationworkercount: "",
-        corporationpersonalitytcno: "",
-        corporationgsmno: "",
-        corporationfax: "",
-        corporationtaxno: "",
-        corporationtaxdepartment: "",
-        corporationauthorizedperson: "",
-        corporationwebaddress: "",
-        corporationmail: "",
-        corporationshef: "",
+    const [post, setPost] = useState({
+        studentName: "",
+        studentSurname: "",
+        studentNo: "",
+        studentDepartment: "",
+        studentClass: "",
+        studentTcNo: "",
+        studentMail: "",
+        studentGsmNo: "",
+        internshipSelection: "",
+        corporationName: "",
+        corporationAddress: "",
+        corporationProduction: "",
+        corporationWorkerCount: "",
+        corporationPersonalityTcNo: "",
+        corporationGsmNo: "",
+        corporationFax: "",
+        corporationTaxNo: "",
+        corporationDepartment: "",
+        corporationAuthorizedPerson: "",
+        corporationWebAddress: "",
+        corporationMail: "",
+        corporationShef: "",
     });
 
     const FormTitles = ["Öğrenci Bilgileri", "Staj Yapılacak Kurum/Kuruluşun Bilgileri:", "İmza"];
 
     const PageDisplay = () => {
         if (page === 0) {
-            return <StudentInfo formData={formData} setFormData={setFormData} />;
+            return <StudentInfo post={post} setPost={setPost} />;
         } else if (page === 1) {
-            return <StajKurumu formData={formData} setFormData={setFormData} />;
+            return <StajKurumu post={post} setPost={setPost} />;
         } else {
-            return <Signature formData={formData} setFormData={setFormData} />;
+            return <Signature post={post} setPost={setPost} />;
         }
     };
+
+    const postSubmit = async (e) => {
+        try {
+            await axios.post('https://localhost:7050/api/Posts', { ...post, userName: localStorage.getItem('userName'), userId: localStorage.getItem('userId') })
+
+            window.location.href = "/";
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
     return (
         <div className="App">
-            <Link href={'/teacher'}>
-                <img alt="..." src={require('../images/ktun-logo.png')} />
-            </Link>
+            <img alt="..." src={require('../images/ktun-logo.png')} />
             <Box sx={{ width: { xs: '95%', sm: '85%', md: '80%', lg: '60%' } }} className='FormCard'>
                 <Grid container spacing={2} padding={2} direction='row'>
                     <Grid item xs={12} >
@@ -74,10 +84,10 @@ const Form = () => {
                     </Grid>
                     <Grid item xs={6}>
                         <button
-                            onClick={() => {
+                            onClick={(e) => {
                                 if (page === FormTitles.length - 1) {
-                                    alert("Form Yollandı");
-                                    console.log(formData);
+                                    postSubmit(e)
+                                    console.log(page);
                                 } else {
                                     setPage((currPage) => currPage + 1);
                                 }

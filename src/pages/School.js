@@ -78,13 +78,6 @@ const rows = [
 ];
 
 const School = () => {
-    // const [posts, setPosts] = useState();
-
-    // axios.get('https://localhost:7050/api/posts').then(res => {
-    //     setPosts(res.data);
-    // });
-
-
     return (
         <>
             <Navbar />

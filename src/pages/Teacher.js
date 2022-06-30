@@ -37,15 +37,15 @@ const columns = [
         editable: false,
     },
     {
-        
+
         field: 'view',
         headerName: 'Görüntüle',
         width: 200,
         renderCell: () => (
             <>
-               <ModalButton
-                header="Danışman Onayı"
-               />
+                <ModalButton
+                    header="Danışman Onayı"
+                />
             </>
         )
     },
@@ -54,22 +54,38 @@ const columns = [
 const Teacher = () => {
     const [tableData, setTableData] = useState([]);
 
+    const getAllPosts = async () => {
+        try {
+            const res = await axios.get('https://localhost:7050/api/Posts');
+            return res.data;
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const getPosts = async () => {
+        setTableData(await getAllPosts())
+    }
+
     useEffect(() => {
-        fetch("https://localhost:7050/api/Posts")
-        ((data) => data.json())
-        .then((data) => setTableData(data))
-    })
+        getPosts();
+    }, []);
 
     return (
         <>
             <Navbar />
             <div style={{ height: '88vh', width: '100%' }}>
-                <DataGrid
-                    rows={tableData}
-                    columns={columns}
-                    pageSize={9}
-                    rowsPerPageOptions={[5]}
-                />
+                {tableData.map(table => {
+                    return (
+                        <DataGrid
+
+                            rows={tableData}
+                            columns={columns}
+                            pageSize={9}
+                            rowsPerPageOptions={[5]}
+                        />
+                    )
+                })}
             </div>
         </>
     )

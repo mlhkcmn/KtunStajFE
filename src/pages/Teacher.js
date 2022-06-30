@@ -23,7 +23,7 @@ const columns = [
         editable: false,
     },
     {
-        field: 'studentClass',
+        field: 'studentDepartment',
         headerName: 'Bölümü',
         type: 'text',
         width: 280,
@@ -56,7 +56,7 @@ const Teacher = () => {
 
     useEffect(() => {
         fetch("https://localhost:7050/api/Posts")
-        .then((data) => data.json())
+        ((data) => data.json())
         .then((data) => setTableData(data))
     })
 

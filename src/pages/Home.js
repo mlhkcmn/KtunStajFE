@@ -153,9 +153,6 @@ const Home = () => {
                             Staj Bilgileri
                         </Typography>
                     </Grid>
-                    <br />
-                    <br />
-                    <br />
                     <Grid item xs={12}>
                         <FormInput
                             type='text'

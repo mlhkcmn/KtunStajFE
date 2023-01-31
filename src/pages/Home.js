@@ -134,7 +134,10 @@ const Home = () => {
                                     type="radio"
                                     id="staj1"
                                     name="staj"
-                                    value="Staj1"
+                                    value="Staj 1"
+                                    onClick={(e) => {
+                                        setPost({ ...post, internshipSelection: e.target.value });
+                                    }}
                                 />
                                 <label htmlFor="staj1">Staj 1</label>
                                 <br />
@@ -142,7 +145,10 @@ const Home = () => {
                                     type="radio"
                                     id="staj2"
                                     name="staj"
-                                    value="Staj2"
+                                    value="Staj 2"
+                                    onClick={(e) => {
+                                        setPost({ ...post, internshipSelection: e.target.value });
+                                    }}
                                 />
                                 <label htmlFor="staj2">Staj 2</label>
                             </fieldset>

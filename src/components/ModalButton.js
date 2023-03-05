@@ -1,10 +1,11 @@
-import React from 'react'
+import React,{ useEffect } from 'react'
 import { Button, Typography, Modal, Box, IconButton, Grid } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import FileUpload from './common/FileUpload';
 import Info from './common/Information';
 import HowToRegOutlinedIcon from '@mui/icons-material/HowToRegOutlined';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
+import axios from "axios";
 
 const style = {
     maxWidth: '660px',
@@ -24,6 +25,15 @@ const ModalButton = (props) => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    const getPostsByPostId = async () => {
+        try {
+            const res = await axios.get(`https://localhost:7050/api/Posts/${localStorage.getItem('postId')}`);
+            console.log(res.data);
+            return res.data;
+        } catch (error) {
+            console.log(error);
+        }
+    };
     return (
         <>
             <Button onClick={handleOpen} className='submissionTableViewButton'>

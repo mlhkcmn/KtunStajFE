@@ -1,15 +1,35 @@
+import { ContactSupportOutlined } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material'
-import React from 'react'
+import React, { useState } from "react";
 import ImageUploading from 'react-images-uploading';
+import KtunLogo from '../../images/ktun-logo.png';
+import axios from "axios";
+
 
 const FileUpload = (props) => {
     const [images, setImages] = React.useState([]);
     const maxNumber = 69;
 
     const onChange = (imageList, addUpdateIndex) => {
-        console.log(imageList, addUpdateIndex);
+        console.log('ee', imageList, addUpdateIndex);
         setImages(imageList);
     };
+
+    const uploadImage = (e) => {
+        console.log('e', e);
+    };
+    const [post, setPost] = useState({
+        photo: ""
+    });
+    const photoSubmit = async (e) => {
+        try {
+            await axios.post('https://localhost:7050/api/Photos', { ...post, userName: localStorage.getItem('userName'), userId: localStorage.getItem('userId') })
+
+            window.location.href = "/";
+        } catch (err) {
+            console.log(err);
+        }
+    }
     return (
         <>
             <Box sx={{ borderRadius: '10px', bgcolor: '#f5f5f5', border: '2px dashed #CEEBFF' }}>
@@ -21,6 +41,7 @@ const FileUpload = (props) => {
                     {props.text}
                 </Typography>
                 <br />
+
                 <ImageUploading
                     multiple
                     value={images}
@@ -42,7 +63,7 @@ const FileUpload = (props) => {
                             <button
                                 className='FileUploadButton'
                                 style={isDragging ? { color: 'red' } : undefined}
-                                onClick={onImageUpload}
+                                onClick={e => onImageUpload(uploadImage(e))}
                                 {...dragProps}>
                                 Tıkla ya da Sürükle
                             </button>

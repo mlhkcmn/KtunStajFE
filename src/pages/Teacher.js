@@ -78,7 +78,6 @@ const Teacher = () => {
                 {tableData.map(table => {
                     return (
                         <DataGrid
-
                             rows={tableData}
                             columns={columns}
                             pageSize={9}

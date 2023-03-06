@@ -23,8 +23,16 @@ const Login = () => {
 
             localStorage.setItem('userName', userData.data.name)
             localStorage.setItem('userId', userData.data.id)
+            localStorage.setItem('userType', userData.data.userType)
 
-            window.location.href = "/";
+            if (userData.data.userType === 0) {
+                window.location.href = "/home";
+            }else if (userData.data.userType === 1) {
+                window.location.href = "/teacher";
+            }else if (userData.data.userType === 2) {
+                window.location.href = "/school";
+            }
+
         } catch (err) {
             console.log(err);
         }

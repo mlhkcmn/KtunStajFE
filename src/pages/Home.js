@@ -3,7 +3,6 @@ import { Box, Grid, Typography } from '@mui/material'
 import axios from "axios";
 import { FormInput, MultilineInput, MultilineInput1 } from "../components/common/Input";
 import ImageUploading from 'react-images-uploading';
-import { Buffer } from 'buffer';
 import FileUpload from "../components/common/FileUpload";
 
 const Home = () => {
@@ -57,7 +56,9 @@ const Home = () => {
     return (
         <div className="App">
             {/* Upload Image */}
-            <img alt="..." src={require('../images/ktun-logo.png')} />
+            <a href="/teacher">
+                <img alt="..." src={require('../images/ktun-logo.png')} />
+            </a>
             <Box sx={{ width: { xs: '95%' } }} className='FormCard'>
                 <Grid container spacing={2} padding={2} sx={{ justifyContent: 'center' }}>
                     <Grid item xs={12}>

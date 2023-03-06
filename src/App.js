@@ -13,9 +13,9 @@ const App = () => {
     <HashRouter>
       <Suspense>
         <Routes>
-          <Route exact path="*" name="Home Page" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route exact path="/home" name="Home Page" element={<Home />}  />
           <Route exact path="/teacher" name="Teacher Page" element={<Teacher />} />
           <Route exact path="/school" name="School Page" element={<School />} />
         </Routes>
